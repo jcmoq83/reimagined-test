@@ -16,6 +16,22 @@
       --focus:rgba(120,180,255,.55);
       --shadow:0 10px 30px rgba(0,0,0,.35);
       --radius:18px;
+      --bg-1:rgba(126,87,255,.28);
+      --bg-2:rgba(46,201,255,.18);
+      --bg-3:rgba(255,176,72,.14);
+    }
+    [data-theme="light"]{
+      --bg:#f4f6fb;
+      --panel:rgba(14,20,40,.06);
+      --panel2:rgba(14,20,40,.10);
+      --text:rgba(10,12,20,.92);
+      --muted:rgba(10,12,20,.62);
+      --border:rgba(10,12,20,.12);
+      --focus:rgba(64,120,255,.45);
+      --shadow:0 12px 26px rgba(18,22,40,.10);
+      --bg-1:rgba(120,140,255,.20);
+      --bg-2:rgba(90,210,255,.18);
+      --bg-3:rgba(255,190,120,.20);
     }
     *{box-sizing:border-box;}
     body{
@@ -23,9 +39,9 @@
       font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(126,87,255,.28), transparent 55%),
-        radial-gradient(1000px 700px at 90% 10%, rgba(46,201,255,.18), transparent 50%),
-        radial-gradient(900px 600px at 40% 120%, rgba(255,176,72,.14), transparent 55%),
+        radial-gradient(1200px 700px at 20% -10%, var(--bg-1), transparent 55%),
+        radial-gradient(1000px 700px at 90% 10%, var(--bg-2), transparent 50%),
+        radial-gradient(900px 600px at 40% 120%, var(--bg-3), transparent 55%),
         var(--bg);
     }
 
@@ -36,6 +52,7 @@
     .subtitle{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.35;}
     .hint{margin-top:6px;font-size:11px;color:rgba(255,255,255,.55);}
 
+    .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
     .search{
       display:flex;align-items:center;gap:10px;
       background:var(--panel);
@@ -50,6 +67,33 @@
       color:var(--text);font-size:13px;
     }
     .search input::placeholder{color:rgba(255,255,255,.45);}
+    [data-theme="light"] .search input::placeholder{color:rgba(10,12,20,.45);}
+
+    .theme-toggle{
+      border:1px solid var(--border);
+      background:linear-gradient(180deg,var(--panel),rgba(255,255,255,.03));
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.2px;
+      box-shadow:var(--shadow);
+      cursor:pointer;
+      transition:transform .12s ease,border-color .12s ease,background .12s ease;
+      white-space:nowrap;
+    }
+    .theme-toggle:hover{
+      transform:translateY(-1px);
+      border-color:rgba(255,255,255,.24);
+      background:linear-gradient(180deg,var(--panel2),rgba(255,255,255,.05));
+    }
+    .theme-toggle:focus-visible{
+      outline:none;
+      box-shadow:0 0 0 3px rgba(120,180,255,.35),var(--shadow);
+      border-color:var(--focus);
+    }
+    [data-theme="light"] .theme-toggle:hover{border-color:rgba(10,12,20,.24);}
 
     .layout{
       max-width:1900px;margin:0 auto;padding:0 18px 18px;
@@ -158,9 +202,14 @@
         <div class="hint">Search only filters (cards are pre-rendered, so they always show).</div>
       </div>
 
-      <div class="search" role="search" aria-label="Search AI tools">
-        <span aria-hidden="true">🔎</span>
-        <input id="q" type="search" placeholder="Try: chat, image, video, voice, coding…" autocomplete="off" />
+      <div class="controls">
+        <div class="search" role="search" aria-label="Search AI tools">
+          <span aria-hidden="true">🔎</span>
+          <input id="q" type="search" placeholder="Try: chat, image, video, voice, coding…" autocomplete="off" />
+        </div>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+          Switch to Light
+        </button>
       </div>
     </div>
   </header>
@@ -997,6 +1046,31 @@
   <script>
     // Search only (cards already exist in HTML)
     (function(){
+      const root = document.documentElement;
+      const toggle = document.getElementById("themeToggle");
+      const storedTheme = localStorage.getItem("theme");
+      const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+      const initialTheme = storedTheme || (prefersLight ? "light" : "dark");
+
+      function applyTheme(theme){
+        root.dataset.theme = theme;
+        if (toggle){
+          const isDark = theme === "dark";
+          toggle.textContent = isDark ? "Switch to Light" : "Switch to Dark";
+          toggle.setAttribute("aria-pressed", String(!isDark));
+        }
+      }
+
+      applyTheme(initialTheme);
+
+      if (toggle){
+        toggle.addEventListener("click", () => {
+          const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+          localStorage.setItem("theme", nextTheme);
+          applyTheme(nextTheme);
+        });
+      }
+
       const q = document.getElementById("q");
       const cards = Array.from(document.querySelectorAll(".card"));
       const countEl = document.getElementById("count");
