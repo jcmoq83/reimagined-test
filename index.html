@@ -100,32 +100,23 @@
 
     .layout{
       max-width:1900px;margin:0 auto;padding:0 18px 18px;
-      display:grid;grid-template-columns:1fr 320px;gap:14px;align-items:start;
     }
-    main{min-width:0;}
 
     /* Grid: aim for 5 columns on wide screens. Page scrolls naturally. */
-    .grid{display:grid;gap:12px;grid-template-columns:repeat(5,minmax(0,1fr));}
-
-    /* Reserved ad space (empty) */
-    aside.ad{position:sticky;top:14px;align-self:start;}
-    .ad-slot{
-      width:100%;height:650px;border-radius:var(--radius);
-      border:1px solid var(--border);
-      background:linear-gradient(180deg,var(--panel),rgba(255,255,255,.03));
-      box-shadow:var(--shadow);
-    }
+    .grid{display:grid;gap:12px;grid-template-columns:repeat(6,minmax(0,1fr));}
 
     /* Responsive */
-    @media (max-width:1500px){
-      .layout{grid-template-columns:1fr 300px;}
+    @media (max-width:1600px){
+      .grid{grid-template-columns:repeat(5,minmax(0,1fr));}
+    }
+    @media (max-width:1300px){
       .grid{grid-template-columns:repeat(4,minmax(0,1fr));}
     }
-    @media (max-width:1100px){
-      .layout{grid-template-columns:1fr;}
-      aside.ad{position:static;}
+    @media (max-width:980px){
+      .grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+    }
+    @media (max-width:720px){
       .grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-      .ad-slot{height:280px;}
     }
 
     a.card{
@@ -210,7 +201,7 @@
     <div class="topbar">
       <div class="titleblock">
         <h1>AI Tools Hub</h1>
-        <p class="subtitle"><span id="count">45</span> tools • 5×9 layout (scrollable)</p>
+        <p class="subtitle"><span id="count">54</span> tools • 6×9 layout (scrollable)</p>
         <div class="hint">Search only filters (cards are pre-rendered, so they always show).</div>
         <div class="click-note">Click any AI to open it.</div>
       </div>
@@ -988,7 +979,7 @@
         <!-- 45 -->
         <a class="card" href="https://www.presentations.ai/" target="_blank" rel="noopener noreferrer"
            data-keywords="presentations ai presentation deck slides prompt to deck">
-                    <div class="head">
+          <div class="head">
             <div class="icon">
               <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://www.presentations.ai" alt=""
                    onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>P</span>';">
@@ -1002,13 +993,161 @@
           <ul class="bullets"><li>Prompt → deck fast</li><li>Business slide focus</li></ul>
         </a>
 
+        <!-- 46 -->
+        <a class="card" href="https://suno.com/" target="_blank" rel="noopener noreferrer"
+           data-keywords="suno music song ai vocals text to music">
+          <div class="head">
+            <div class="icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://suno.com" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>S</span>';">
+            </div>
+            <div>
+              <p class="name">Suno</p>
+              <div class="meta"><span class="pill">Music</span></div>
+            </div>
+          </div>
+          <p class="desc">Create full songs from a simple text prompt, including style and lyrics.</p>
+          <ul class="bullets"><li>Text → song</li><li>Quick iterations</li></ul>
+        </a>
+
+        <!-- 47 -->
+        <a class="card" href="https://www.udio.com/" target="_blank" rel="noopener noreferrer"
+           data-keywords="udio music song ai generate remix extend">
+          <div class="head">
+            <div class="icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://www.udio.com" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>U</span>';">
+            </div>
+            <div>
+              <p class="name">Udio</p>
+              <div class="meta"><span class="pill">Music</span></div>
+            </div>
+          </div>
+          <p class="desc">Generate songs from prompts and extend or remix with longer clips.</p>
+          <ul class="bullets"><li>Prompted songs</li><li>Extend & remix</li></ul>
+        </a>
+
+        <!-- 48 -->
+        <a class="card" href="https://elevenlabs.io/" target="_blank" rel="noopener noreferrer"
+           data-keywords="elevenlabs voice ai text to speech dubbing audio">
+          <div class="head">
+            <div class="icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://elevenlabs.io" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>E</span>';">
+            </div>
+            <div>
+              <p class="name">ElevenLabs</p>
+              <div class="meta"><span class="pill">Voice</span></div>
+            </div>
+          </div>
+          <p class="desc">Generate high-quality AI voices for narration, dubbing, and audio projects.</p>
+          <ul class="bullets"><li>Natural speech</li><li>Many voices</li></ul>
+        </a>
+
+        <!-- 49 -->
+        <a class="card" href="https://pika.art/" target="_blank" rel="noopener noreferrer"
+           data-keywords="pika video ai animation image to video text to video">
+          <div class="head">
+            <div class="icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://pika.art" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>P</span>';">
+            </div>
+            <div>
+              <p class="name">Pika</p>
+              <div class="meta"><span class="pill">Video</span></div>
+            </div>
+          </div>
+          <p class="desc">Create expressive AI animations that sync visuals to sound.</p>
+          <ul class="bullets"><li>Audio-synced clips</li><li>Expressive effects</li></ul>
+        </a>
+
+        <!-- 50 -->
+        <a class="card" href="https://runwayml.com/" target="_blank" rel="noopener noreferrer"
+           data-keywords="runway video generation gen-4.5 text to video">
+          <div class="head">
+            <div class="icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://runwayml.com" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>R</span>';">
+            </div>
+            <div>
+              <p class="name">Runway</p>
+              <div class="meta"><span class="pill">Video</span></div>
+            </div>
+          </div>
+          <p class="desc">Cinematic AI video generation with state-of-the-art motion quality.</p>
+          <ul class="bullets"><li>Text → video</li><li>Creative control</li></ul>
+        </a>
+
+        <!-- 51 -->
+        <a class="card" href="https://www.krea.ai/" target="_blank" rel="noopener noreferrer"
+           data-keywords="krea realtime image video 3d generation">
+          <div class="head">
+            <div class="icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://www.krea.ai" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>K</span>';">
+            </div>
+            <div>
+              <p class="name">Krea</p>
+              <div class="meta"><span class="pill">Creative Suite</span></div>
+            </div>
+          </div>
+          <p class="desc">Generate or edit images, videos, and 3D objects with AI tools.</p>
+          <ul class="bullets"><li>Realtime workflows</li><li>Image + video</li></ul>
+        </a>
+
+        <!-- 52 -->
+        <a class="card" href="https://www.instant3d.ai/" target="_blank" rel="noopener noreferrer"
+           data-keywords="instant3d 3d model image to 3d text to 3d">
+          <div class="head">
+            <div class="icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://www.instant3d.ai" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>I</span>';">
+            </div>
+            <div>
+              <p class="name">Instant3D</p>
+              <div class="meta"><span class="pill">3D</span></div>
+            </div>
+          </div>
+          <p class="desc">Generate 3D models from prompts or images in seconds.</p>
+          <ul class="bullets"><li>Text → 3D</li><li>Image → 3D</li></ul>
+        </a>
+
+        <!-- 53 -->
+        <a class="card" href="https://www.kaiber.ai/" target="_blank" rel="noopener noreferrer"
+           data-keywords="kaiber video music visuals animation ai">
+          <div class="head">
+            <div class="icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://www.kaiber.ai" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>K</span>';">
+            </div>
+            <div>
+              <p class="name">Kaiber</p>
+              <div class="meta"><span class="pill">Video</span></div>
+            </div>
+          </div>
+          <p class="desc">Creative studio for AI-powered visuals across image, video, and sound.</p>
+          <ul class="bullets"><li>Infinite canvas</li><li>Creator-friendly</li></ul>
+        </a>
+
+        <!-- 54 -->
+        <a class="card" href="https://magnific.ai/" target="_blank" rel="noopener noreferrer"
+           data-keywords="magnific image upscaler enhancer ai">
+          <div class="head">
+            <div class="icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://magnific.ai" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>M</span>';">
+            </div>
+            <div>
+              <p class="name">Magnific</p>
+              <div class="meta"><span class="pill">Image</span></div>
+            </div>
+          </div>
+          <p class="desc">Upscale and enhance images with AI for higher detail and resolution.</p>
+          <ul class="bullets"><li>Upscale</li><li>Detail boost</li></ul>
+        </a>
+
       </section>
     </main>
-
-    <!-- Empty reserved ad space -->
-    <aside class="ad" aria-label="Ad space">
-      <div class="ad-slot"></div>
-    </aside>
   </div>
 
   <script>
