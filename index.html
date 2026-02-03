@@ -1072,8 +1072,8 @@
       const root = document.documentElement;
       const toggle = document.getElementById("themeToggle");
       const storedTheme = localStorage.getItem("theme");
-      const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
-      const initialTheme = storedTheme || (prefersLight ? "light" : "dark");
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const initialTheme = storedTheme || (prefersDark ? "dark" : "light");
 
       function applyTheme(theme){
         root.dataset.theme = theme;
