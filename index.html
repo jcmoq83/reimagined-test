@@ -51,6 +51,7 @@
     h1{margin:0;font-size:18px;letter-spacing:.2px;font-weight:850;}
     .subtitle{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.35;}
     .hint{margin-top:6px;font-size:11px;color:rgba(255,255,255,.55);}
+    [data-theme="light"] .hint{color:rgba(10,12,20,.55);}
 
     .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
     .search{
@@ -153,6 +154,11 @@
       padding:6px 9px;border-radius:999px;
       backdrop-filter:blur(10px);
     }
+    [data-theme="light"] .badge{
+      color:rgba(10,12,20,.70);
+      background:rgba(10,12,20,.06);
+      border-color:rgba(10,12,20,.12);
+    }
 
     .head{display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:center;}
     .icon{
@@ -162,8 +168,13 @@
       display:flex;align-items:center;justify-content:center;
       overflow:hidden;flex:0 0 auto;
     }
+    [data-theme="light"] .icon{
+      background:rgba(10,12,20,.06);
+      border-color:rgba(10,12,20,.12);
+    }
     .icon img{width:28px;height:28px;object-fit:contain;display:block;}
     .fallback{font-weight:900;font-size:14px;color:rgba(255,255,255,.85);letter-spacing:.2px;}
+    [data-theme="light"] .fallback{color:rgba(10,12,20,.80);}
 
     .name{margin:0;font-size:14px;font-weight:850;line-height:1.2;}
     .meta{margin-top:4px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
@@ -173,10 +184,17 @@
       background:rgba(255,255,255,.06);
       padding:4px 8px;border-radius:999px;
     }
+    [data-theme="light"] .pill{
+      color:rgba(10,12,20,.65);
+      border-color:rgba(10,12,20,.12);
+      background:rgba(10,12,20,.05);
+    }
 
     /* no clamping => no truncation */
     .desc{margin:0;color:rgba(255,255,255,.74);font-size:12px;line-height:1.42;white-space:normal;}
     .bullets{margin:0;padding-left:16px;color:rgba(255,255,255,.72);font-size:12px;line-height:1.38;}
+    [data-theme="light"] .desc{color:rgba(10,12,20,.72);}
+    [data-theme="light"] .bullets{color:rgba(10,12,20,.65);}
     .bullets li{margin:2px 0;}
 
     .hidden{display:none !important;}
@@ -189,6 +207,11 @@
       padding:12px 14px;
       color:rgba(255,255,255,.75);
       font-size:12px;line-height:1.4;
+    }
+    [data-theme="light"] .noscript{
+      border-color:rgba(10,12,20,.18);
+      background:rgba(10,12,20,.04);
+      color:rgba(10,12,20,.70);
     }
   </style>
 </head>
