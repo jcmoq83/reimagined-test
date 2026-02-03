@@ -103,19 +103,22 @@
     }
 
     /* Grid: aim for 5 columns on wide screens. Page scrolls naturally. */
-    .grid{display:grid;gap:12px;grid-template-columns:repeat(6,minmax(0,1fr));}
+    .grid{display:grid;gap:12px;grid-template-columns:repeat(7,minmax(0,1fr));}
 
     /* Responsive */
-    @media (max-width:1600px){
+    @media (max-width:1800px){
+      .grid{grid-template-columns:repeat(6,minmax(0,1fr));}
+    }
+    @media (max-width:1500px){
       .grid{grid-template-columns:repeat(5,minmax(0,1fr));}
     }
-    @media (max-width:1300px){
+    @media (max-width:1200px){
       .grid{grid-template-columns:repeat(4,minmax(0,1fr));}
     }
-    @media (max-width:980px){
+    @media (max-width:900px){
       .grid{grid-template-columns:repeat(3,minmax(0,1fr));}
     }
-    @media (max-width:720px){
+    @media (max-width:680px){
       .grid{grid-template-columns:repeat(2,minmax(0,1fr));}
     }
 
@@ -201,7 +204,7 @@
     <div class="topbar">
       <div class="titleblock">
         <h1>AI Tools Hub</h1>
-        <p class="subtitle"><span id="count">54</span> tools • 6×9 layout (scrollable)</p>
+        <p class="subtitle"><span id="count">56</span> tools • 7×8 layout (scrollable)</p>
         <div class="hint">Search only filters (cards are pre-rendered, so they always show).</div>
         <div class="click-note">Click any AI to open it.</div>
       </div>
@@ -994,93 +997,76 @@
         </a>
 
         <!-- 46 -->
-        <a class="card" href="https://suno.com/" target="_blank" rel="noopener noreferrer"
-           data-keywords="suno music song ai vocals text to music">
+        <a class="card" href="https://www.midjourney.com/" target="_blank" rel="noopener noreferrer"
+           data-keywords="midjourney art image generation ai">
           <div class="head">
             <div class="icon">
-              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://suno.com" alt=""
-                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>S</span>';">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://www.midjourney.com" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>M</span>';">
             </div>
             <div>
-              <p class="name">Suno</p>
-              <div class="meta"><span class="pill">Music</span></div>
+              <p class="name">Midjourney</p>
+              <div class="meta"><span class="pill">Art</span></div>
             </div>
           </div>
-          <p class="desc">Create full songs from a simple text prompt, including style and lyrics.</p>
-          <ul class="bullets"><li>Text → song</li><li>Quick iterations</li></ul>
+          <p class="desc">Text-to-image generator known for painterly and cinematic styles.</p>
+          <ul class="bullets"><li>High quality art</li><li>Distinct styles</li></ul>
         </a>
 
         <!-- 47 -->
-        <a class="card" href="https://www.udio.com/" target="_blank" rel="noopener noreferrer"
-           data-keywords="udio music song ai generate remix extend">
+        <a class="card" href="https://leonardo.ai/" target="_blank" rel="noopener noreferrer"
+           data-keywords="leonardo ai art image generation assets">
           <div class="head">
             <div class="icon">
-              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://www.udio.com" alt=""
-                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>U</span>';">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://leonardo.ai" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>L</span>';">
             </div>
             <div>
-              <p class="name">Udio</p>
-              <div class="meta"><span class="pill">Music</span></div>
+              <p class="name">Leonardo AI</p>
+              <div class="meta"><span class="pill">Art</span></div>
             </div>
           </div>
-          <p class="desc">Generate songs from prompts and extend or remix with longer clips.</p>
-          <ul class="bullets"><li>Prompted songs</li><li>Extend & remix</li></ul>
+          <p class="desc">Create game-ready concept art and assets with AI models.</p>
+          <ul class="bullets"><li>Asset generation</li><li>Style control</li></ul>
         </a>
 
         <!-- 48 -->
-        <a class="card" href="https://elevenlabs.io/" target="_blank" rel="noopener noreferrer"
-           data-keywords="elevenlabs voice ai text to speech dubbing audio">
+        <a class="card" href="https://openart.ai/" target="_blank" rel="noopener noreferrer"
+           data-keywords="openart ai art image generation gallery">
           <div class="head">
             <div class="icon">
-              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://elevenlabs.io" alt=""
-                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>E</span>';">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://openart.ai" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>O</span>';">
             </div>
             <div>
-              <p class="name">ElevenLabs</p>
-              <div class="meta"><span class="pill">Voice</span></div>
+              <p class="name">OpenArt</p>
+              <div class="meta"><span class="pill">Art</span></div>
             </div>
           </div>
-          <p class="desc">Generate high-quality AI voices for narration, dubbing, and audio projects.</p>
-          <ul class="bullets"><li>Natural speech</li><li>Many voices</li></ul>
+          <p class="desc">Generate and explore AI art with community prompts and styles.</p>
+          <ul class="bullets"><li>Prompt gallery</li><li>Multiple models</li></ul>
         </a>
 
         <!-- 49 -->
-        <a class="card" href="https://pika.art/" target="_blank" rel="noopener noreferrer"
-           data-keywords="pika video ai animation image to video text to video">
+        <a class="card" href="https://www.artbreeder.com/" target="_blank" rel="noopener noreferrer"
+           data-keywords="artbreeder ai art portraits character generator">
           <div class="head">
             <div class="icon">
-              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://pika.art" alt=""
-                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>P</span>';">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://www.artbreeder.com" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>A</span>';">
             </div>
             <div>
-              <p class="name">Pika</p>
-              <div class="meta"><span class="pill">Video</span></div>
+              <p class="name">Artbreeder</p>
+              <div class="meta"><span class="pill">Art</span></div>
             </div>
           </div>
-          <p class="desc">Create expressive AI animations that sync visuals to sound.</p>
-          <ul class="bullets"><li>Audio-synced clips</li><li>Expressive effects</li></ul>
+          <p class="desc">Blend and evolve images to create new characters and artworks.</p>
+          <ul class="bullets"><li>Image mixing</li><li>Character design</li></ul>
         </a>
 
         <!-- 50 -->
-        <a class="card" href="https://runwayml.com/" target="_blank" rel="noopener noreferrer"
-           data-keywords="runway video generation gen-4.5 text to video">
-          <div class="head">
-            <div class="icon">
-              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://runwayml.com" alt=""
-                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>R</span>';">
-            </div>
-            <div>
-              <p class="name">Runway</p>
-              <div class="meta"><span class="pill">Video</span></div>
-            </div>
-          </div>
-          <p class="desc">Cinematic AI video generation with state-of-the-art motion quality.</p>
-          <ul class="bullets"><li>Text → video</li><li>Creative control</li></ul>
-        </a>
-
-        <!-- 51 -->
         <a class="card" href="https://www.krea.ai/" target="_blank" rel="noopener noreferrer"
-           data-keywords="krea realtime image video 3d generation">
+           data-keywords="krea ai art realtime image generation">
           <div class="head">
             <div class="icon">
               <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://www.krea.ai" alt=""
@@ -1088,62 +1074,113 @@
             </div>
             <div>
               <p class="name">Krea</p>
-              <div class="meta"><span class="pill">Creative Suite</span></div>
+              <div class="meta"><span class="pill">Art</span></div>
             </div>
           </div>
-          <p class="desc">Generate or edit images, videos, and 3D objects with AI tools.</p>
-          <ul class="bullets"><li>Realtime workflows</li><li>Image + video</li></ul>
+          <p class="desc">Realtime AI art generation and creative exploration tools.</p>
+          <ul class="bullets"><li>Realtime results</li><li>Creative control</li></ul>
+        </a>
+
+        <!-- 51 -->
+        <a class="card" href="https://supermeme.ai/" target="_blank" rel="noopener noreferrer"
+           data-keywords="supermeme ai meme generator captions">
+          <div class="head">
+            <div class="icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://supermeme.ai" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>S</span>';">
+            </div>
+            <div>
+              <p class="name">Supermeme</p>
+              <div class="meta"><span class="pill">Meme</span></div>
+            </div>
+          </div>
+          <p class="desc">Generate meme captions from prompts and topics.</p>
+          <ul class="bullets"><li>Prompt → meme</li><li>Quick shareables</li></ul>
         </a>
 
         <!-- 52 -->
-        <a class="card" href="https://www.instant3d.ai/" target="_blank" rel="noopener noreferrer"
-           data-keywords="instant3d 3d model image to 3d text to 3d">
+        <a class="card" href="https://imgflip.com/ai-meme" target="_blank" rel="noopener noreferrer"
+           data-keywords="imgflip ai meme generator templates">
           <div class="head">
             <div class="icon">
-              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://www.instant3d.ai" alt=""
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://imgflip.com" alt=""
                    onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>I</span>';">
             </div>
             <div>
-              <p class="name">Instant3D</p>
-              <div class="meta"><span class="pill">3D</span></div>
+              <p class="name">Imgflip AI Meme</p>
+              <div class="meta"><span class="pill">Meme</span></div>
             </div>
           </div>
-          <p class="desc">Generate 3D models from prompts or images in seconds.</p>
-          <ul class="bullets"><li>Text → 3D</li><li>Image → 3D</li></ul>
+          <p class="desc">Auto-generate memes from prompts and classic templates.</p>
+          <ul class="bullets"><li>Classic templates</li><li>Fast results</li></ul>
         </a>
 
         <!-- 53 -->
-        <a class="card" href="https://www.kaiber.ai/" target="_blank" rel="noopener noreferrer"
-           data-keywords="kaiber video music visuals animation ai">
+        <a class="card" href="https://www.kapwing.com/meme-maker/ai" target="_blank" rel="noopener noreferrer"
+           data-keywords="kapwing ai meme maker generator">
           <div class="head">
             <div class="icon">
-              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://www.kaiber.ai" alt=""
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://www.kapwing.com" alt=""
                    onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>K</span>';">
             </div>
             <div>
-              <p class="name">Kaiber</p>
-              <div class="meta"><span class="pill">Video</span></div>
+              <p class="name">Kapwing Meme Generator</p>
+              <div class="meta"><span class="pill">Meme</span></div>
             </div>
           </div>
-          <p class="desc">Creative studio for AI-powered visuals across image, video, and sound.</p>
-          <ul class="bullets"><li>Infinite canvas</li><li>Creator-friendly</li></ul>
+          <p class="desc">Create memes with AI captions and quick edits.</p>
+          <ul class="bullets"><li>Caption help</li><li>Easy edits</li></ul>
         </a>
 
         <!-- 54 -->
-        <a class="card" href="https://magnific.ai/" target="_blank" rel="noopener noreferrer"
-           data-keywords="magnific image upscaler enhancer ai">
+        <a class="card" href="https://ludo.ai/" target="_blank" rel="noopener noreferrer"
+           data-keywords="ludo ai game ideas design research">
           <div class="head">
             <div class="icon">
-              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://magnific.ai" alt=""
-                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>M</span>';">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://ludo.ai" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>L</span>';">
             </div>
             <div>
-              <p class="name">Magnific</p>
-              <div class="meta"><span class="pill">Image</span></div>
+              <p class="name">Ludo.ai</p>
+              <div class="meta"><span class="pill">Game</span></div>
             </div>
           </div>
-          <p class="desc">Upscale and enhance images with AI for higher detail and resolution.</p>
-          <ul class="bullets"><li>Upscale</li><li>Detail boost</li></ul>
+          <p class="desc">Generate game ideas and references to speed up game design.</p>
+          <ul class="bullets"><li>Idea generator</li><li>Game research</li></ul>
+        </a>
+
+        <!-- 55 -->
+        <a class="card" href="https://scenario.gg/" target="_blank" rel="noopener noreferrer"
+           data-keywords="scenario ai game art assets characters">
+          <div class="head">
+            <div class="icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://scenario.gg" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>S</span>';">
+            </div>
+            <div>
+              <p class="name">Scenario</p>
+              <div class="meta"><span class="pill">Game</span></div>
+            </div>
+          </div>
+          <p class="desc">Generate game art assets and characters with custom styles.</p>
+          <ul class="bullets"><li>Custom models</li><li>Game assets</li></ul>
+        </a>
+
+        <!-- 56 -->
+        <a class="card" href="https://rosebud.ai/" target="_blank" rel="noopener noreferrer"
+           data-keywords="rosebud ai game maker no code">
+          <div class="head">
+            <div class="icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain_url=https://rosebud.ai" alt=""
+                   onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;fallback&quot;>R</span>';">
+            </div>
+            <div>
+              <p class="name">Rosebud AI</p>
+              <div class="meta"><span class="pill">Game</span></div>
+            </div>
+          </div>
+          <p class="desc">Create playable games and experiences with AI assistance.</p>
+          <ul class="bullets"><li>No-code games</li><li>Playable builds</li></ul>
         </a>
 
       </section>
