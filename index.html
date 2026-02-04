@@ -1964,6 +1964,26 @@
       ];
 
       const toolBulletsKo = toolBulletsKoPairs.flat();
+      function normalize(s){ return (s || "").toLowerCase().trim(); }
+
+      // Build a bilingual index per card so search works in both EN/KO regardless of UI language.
+      const searchIndex = cards.map((card, i) => {
+        const bulletOffset = i * 2;
+        const tokens = [
+          card.dataset.keywords || "",
+          toolNamesEn[i] || "",
+          toolPillsEn[i] || "",
+          toolDescsEn[i] || "",
+          toolBulletsEn[bulletOffset] || "",
+          toolBulletsEn[bulletOffset + 1] || "",
+          toolNamesKo[i] || "",
+          toolPillsKo[i] || "",
+          toolDescsKo[i] || "",
+          toolBulletsKo[bulletOffset] || "",
+          toolBulletsKo[bulletOffset + 1] || "",
+        ];
+        return normalize(tokens.join(" "));
+      });
 
       const i18n = {
         en: {
@@ -2212,14 +2232,13 @@
 
       if (countEl) countEl.textContent = visibleCount;
 
-      function normalize(s){ return (s || "").toLowerCase().trim(); }
-
       if (searchInput){
         searchInput.addEventListener("input", () => {
           const term = normalize(searchInput.value);
           let visible = 0;
-          for (const c of cards){
-            const kw = (c.dataset.keywords || "").toLowerCase();
+          for (let i = 0; i < cards.length; i++){
+            const c = cards[i];
+            const kw = searchIndex[i];
             const show = !term || kw.includes(term);
             c.classList.toggle("hidden", !show);
             if (show) visible++;
